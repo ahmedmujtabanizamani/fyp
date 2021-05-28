@@ -97,7 +97,7 @@ if(isset($_POST['signup'])){
             if($update_res){
                 $_SESSION['name'] = $name;
                 $_SESSION['email'] = $email;
-                header('location: form1.php');
+                header('location: dashboard.php');
                 exit();
             }else{
                 $errors['otp-error'] = "Failed while updating code!";
@@ -129,6 +129,8 @@ if(isset($_POST['signup'])){
                     header('location: user-otp.php');
                 }
             }else{
+				//unset($email);
+				//unset($password);
                 $errors['email'] = "Incorrect email or password!";
             }
         }else{

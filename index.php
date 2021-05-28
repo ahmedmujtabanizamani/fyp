@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+		 <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 		<style>
        <!--Start header1-->
 			.nav-link{
@@ -36,7 +37,8 @@
 		<title>Hello, world!</title>
 	</head>
 	<body>
-		<?php include 'header.php'; ?>     
+		<?php require_once "controllerUserData.php"; ?>
+		<?php include 'navbar1.php'; ?>     
 		<?php include 'quoteBody.html'; ?>
 	</body>
 </html>

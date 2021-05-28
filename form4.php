@@ -66,11 +66,13 @@ if($email != false && $password != false){
 <?php include 'form4DB.php'; ?>
 <html>
 	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 		<link rel="stylesheet" href="form.css">	
 		<title>Form 4</title>
 	</head>
 	
-	<body>
+	<body id="mybody" style="display:none;">
+		<?php include "navbar1.php"; ?>
 		<!-- form start -->
 		<form action="" method="post" enctype="multipart/form-data">
 			
@@ -127,6 +129,12 @@ if($email != false && $password != false){
 			<input id="saveSubmit" type="submit" name="submit" value="submit">
 		</form>
 		
-		
+		<script>
+			var abody = document.getElementById("mybody");
+			window.onload = function() 
+			{ 
+				setTimeout(function(){ abody.style.display = "block";  }, 500);
+			}
+		</script>
 	</body>
 </html>

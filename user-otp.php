@@ -1,8 +1,10 @@
 <?php require_once "controllerUserData.php"; ?>
 <?php 
 $email = $_SESSION['email'];
-if($email == false){
+$password = $_SESSION['password'];
+if($email == false && $password == false){
   header('Location: login-user.php');
+  exit();
 }
 ?>
 <!DOCTYPE html>
@@ -10,10 +12,12 @@ if($email == false){
 <head>
     <meta charset="UTF-8">
     <title>Code Verification</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+	<?php include "navbar1.php"; ?>
     <div class="container">
         <div class="row">
             <div class="col-md-4 offset-md-4 form">

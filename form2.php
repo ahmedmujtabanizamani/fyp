@@ -43,6 +43,7 @@ if($email != false && $password != false){
 <?php include 'form2DB.php'; ?>
 <html>
 	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 		<link rel="stylesheet" href="form.css">	
 		<title>Form 2</title>
 
@@ -69,8 +70,9 @@ if($email != false && $password != false){
 	
 	</script>
 	
-	<body>
+	<body id="mybody" style="display:none;">
 		<!-- form start -->
+		<?php include "navbar1.php"; ?>
 		<form name=form2 action="" method="post" enctype="multipart/form-data">
 			<table>
 				<tr>
@@ -232,6 +234,12 @@ if($email != false && $password != false){
 			<input id="saveSubmit" type="submit" name="saveNext2" value="save next">
 			
 		</form>
-
+	<script>
+			var abody = document.getElementById("mybody");
+			window.onload = function() 
+			{ 
+				setTimeout(function(){ abody.style.display = "block";  }, 500);
+			}
+		</script>
 	</body>
 </html>

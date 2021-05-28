@@ -101,6 +101,49 @@ table{
 	margin: 0 auto;
 }
 
+.flex-container{
+max-width:1024px;
+display: flex;
+margin:0 auto;
+flex-wrap: wrap;
+text-align:right;
+align-content: stretch;
+
+}
+.flex-item{
+margin-top: 0px;
+display:flex;
+width:50%;
+padding:10px;
+border: #DFDFDF 1px solid;
+background-color: #FAFAFA;
+color: #151515;
+
+justify-content: flex-end;
+}
+
+@media (max-width: 800px) {
+  .flex-container{
+  
+    flex-direction: column;
+    align-items: stretch;
+   justify-content:center; 
+  }
+  .flex-item{
+	width:auto;
+	border: none;
+	margin:0 10px;
+	}
+}
+.headin{
+	width:auto;
+	font-size:12px;
+	}
+.defin {
+	width: 70%;
+	
+}
+
 
 
 

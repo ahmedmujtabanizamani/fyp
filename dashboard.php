@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 
-<?php include "user.php"; ?>
+
 <?php require_once "controllerUserData.php"; ?>
 <?php 
+$page = "dashboard";
 $email = $_SESSION['email'];
 $password = $_SESSION['password'];
 if($email != false && $password != false){
@@ -54,12 +55,15 @@ if($email != false && $password != false){
 ?>
 <html>
 	<head>
+		 <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 		<link rel="stylesheet" href="form.css">	
+		<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
 		<title>Admission Application</title>
 	</head>
 	
-	<body>
-		
+	
+	<body id="mybody" style="display:none;">
+		<?php include "navbar1.php"; ?>
 		<div class="heading">
 			Welcome!
 		</div>
@@ -67,10 +71,19 @@ if($email != false && $password != false){
 		<!-- info card -->
 		<?php
 		if($submitted){
-			echo '<div class="card">';
-			echo '	<img src="'.$pic.'" width="100px;">';
-			echo '	<h4> '.$name.'</h4>';
-			echo '	<h4> '.$status.'</h4>';
+			echo '<div class="cardd">';
+			echo '	<div class="card"><img class="" src="'.$pic.'" width="100px;"><div class="text-center">Photo</div></div>';
+			echo '	
+			<div class=" ">
+				<div class="panel-heading">Name</div>
+				<h3 class="panel-body">'.$name.'</h3>
+			</div>';
+			
+			echo '	
+			<div class=" ">
+				<div class="panel-heading">status</div>
+				<h3 class="panel-body">'.$status.'</h3>
+			</div>';
 			echo '</div>';
 		}
 		?>
@@ -79,8 +92,38 @@ if($email != false && $password != false){
 		<br>
 		<?php if($submitted == true){echo '<form method="post" action="app-view.php"> <input type="submit" name="" value="View Application" class="btn-general" /> </form>';} ?>
 		<br>
-		<?php if($submitted == true && $status == "submitted"){echo '<form method="post" action=""> <input type="submit" name="deleteApplication" value="Delete Application" class="btn-general" /> </form>';} ?>
+		<?php if($submitted == true && $status == "submitted"){echo '<button type="button" class="btn-general" data-toggle="modal" data-target="#myModal">Delete Application</button>';} ?>
 		<br>
 		<?php if($submitted == true && $status == "accepted"){echo '<form method="post" action="challan.php"> <input type="submit" value="Download Chalan" class="btn-general" /> </form>';} ?>
+		
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header ">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title text-danger">Are you sure Delete All</h4>
+        </div>
+        <div class="modal-body">
+          <p>Are you sure you want to delete whole application, you might lost all of your entered data so please thing before click.</p>
+        </div>
+        <div class="modal-footer">
+			<button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
+          <form method="post" action=""> <input type="submit" name="deleteApplication" value="Delete" class="btn btn-danger" /> </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</div>
+<script>
+			var abody = document.getElementById("mybody");
+			window.onload = function() 
+			{ 
+				setTimeout(function(){ abody.style.display = "block";  }, 500);
+			}
+		</script>
 	</body>
 </html>
