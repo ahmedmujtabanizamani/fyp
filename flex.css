@@ -131,16 +131,14 @@ justify-content: flex-end;
 }
 
 @media (max-width: 800px) {
-  .flex-container{
-  
-    flex-direction: column;
-	align-content:center;
-   justify-content:center;
-
-  }
-  .headin{
-  	margin-right:10px;
-  }
+	.flex-container{
+		flex-direction: column;
+		align-content:center;
+		justify-content:center;
+	}
+	.headin{
+		margin-right:10px;
+	}
   .flex-item{
 
     width:100%;
@@ -157,8 +155,6 @@ justify-content: flex-end;
 	text-align:left;
 	width: 70%;	
 }
-
-
 
 input[type="file"] {
        max-width:200px;
