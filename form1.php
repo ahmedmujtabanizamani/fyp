@@ -41,7 +41,7 @@ if($email != false && $password != false){
 			<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 		    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
 
-		<link rel="stylesheet" href="form.css">	
+		<link rel="stylesheet" href="flex.css">	
 		<title>Form 1</title>
 	<script>
 		var loadFile = function(event) {
@@ -55,188 +55,231 @@ if($email != false && $password != false){
 	<body style="display:none;" id="mybody">
 		<!-- form start -->
 		<form class="table" action="" method="post" enctype="multipart/form-data">
-			<table>
-				<tr>
-					<td colspan="3">
-						<div class="heading">
-							Personal Info
-						</div>
-					</td>
-				</tr>
+			<div class="heading">
+				<div>
+					Personal Info
+				</div>
+							
+			</div>
+			<!-- ================================================================================================================= -->
+		
 				<!-- picture upload row  start -->
 				
-				<tr>
-					<td class="required label">	
-						 Personal Photo
-					</td>
-					<td>	
-						 <img id="output" height="100px" src="images/gm.png">
-					</td>
-					<td>
-						Please upload your recent full-faced passport size photo (*.jpg, *.jpeg) : <br>
-						<br>
-						<input value="" type="file" name="pics" onchange="loadFile(event);">
-						
-					</td>
-				</tr>
-			</table>
+				<div class="flex-container">
+					<div class="flex-item">
+						<div class="headin required">
+							Personal Photo
+							<br><br>
+							passport size photo (*.jpg, *.jpeg) :
+						</div>
+						<div class="defin">
+							<img id="output" height="100px" src="images/gm.png">
+						</div>
+					</div>
+					
+					<div class="flex-item">
+						<div class="headin">
+							<input type="file" name="pics" onchange="loadFile(event);">
+						</div>
+						<div class="defin">
+						</div>
+					</div>
+				</div>
+
 				<!-- picture upload row  end -->
 				
 				<!-- basic info start -->
-			<table>
 				<!-- Row 1 -->
-				<tr>		
-					<td class="required label">	
-						Name
-					</td>
-					<td>
-						<input class="input-text form-control" type="text" name="name" required="required">
-					</td>
-					<td class="required label form-group">	
-						Surname
-					</td>
-					<td>
-						<input class="input-text form-control" type="text" name="surname" required="required">
-					</td>
-				</tr>
+				<div class="flex-container">
+					<div class="flex-item">
+						
+						<div class="headin required">	
+							Name &nbsp;
+						</div>
+						<div class="defin">
+							<input class="form-control" type="text" name="name" required="required">
+						</div>
+					</div>		
+					<div class="flex-item">
+						<div class="headin required">	
+							Surname &nbsp;
+						</div>
+						<div class="defin">
+							<input class="form-control" type="text" name="surname" required="required">
+						</div>
+					</div>
+				</div>	
+				
 				<!-- Row 2 -->
-				<tr>
-					<td class="required label">	
-						Father's Name
-					</td>
-					<td>
-						<input class="input-text form-control" type="text" name="fathername" required="required" >
-					</td>
-					<td class="required label">	
-						Gender
-					</td>
-					<td class="">
-						<input type="radio" name="gender" value="m" required > Male
-						<input type="radio" name="gender" value="f"> Female
-					</td>
-				</tr>
-				<!-- Row 3 -->
-				<tr>
-					<td class="required label">	
-						Martial Status
-					</td>
-					<td>
-						<input type="radio" name="married" value="s" required > Unmarried
-						<input type="radio" name="married" value="m" > Married
-					</td>
-					<td class="required label">	
-						Nationality
-					</td>
-					<td>
-						<select name="nationality" class="form-select">
-							<option value="pakistani">Pakistani</option>
-							<option value="afghanistani">Afghanistani</option>
-							<option value="american">American</option>
-						</select>
-					</td>
-				</tr>
+				<div class="flex-container">
+					<div class="flex-item">
+						<div class="required headin">	
+							Father's Name &nbsp;
+						</div>
+						<div class="defin">
+							<input class="input-text form-control" type="text" name="fathername" required="required" >
+						</div>
+					</div>
+					<div class="flex-item">
+						<div class="required headin">	
+							Gender
+						</div>
+						&nbsp;&nbsp;
+						<div class="defin">
+							<input type="radio" name="gender" value="m" required > Male
+							<input type="radio" name="gender" value="f"> Female
+						</div>
+					</div>
+				</div>
+				<!-- ========================================== -->
+				<div class="flex-container">
+					<div class="flex-item">
+						<div class="headin required">
+							Martial Status
+						</div>
+						<div class="defin">
+							<input type="radio" name="married" value="s" required > Unmarried
+							<input type="radio" name="married" value="m" > Married
+						</div>
+					</div>
+					<div class="flex-item">
+						<div class="headin required">
+							Nationality
+						</div>
+						<div class="defin">
+							<select name="nationality" class="form-select">
+								<option value="pakistani">Pakistani</option>
+								<option value="afghanistani">Afghanistani</option>
+								<option value="american">American</option>
+							</select>
+						</div>
+					</div>
+				</div>
+			
+			
+				<!-- Row 3 ==========================================================================================-->
+			
+				<div class="flex-container">
+					<div class="flex-item">
+						<div class="headin required">
+							Birth Date &nbsp;
+						</div>
+						<div class="defin">
+							<input class="form-control" type="date" name="birthdate" required="required">
+						</div>
+					</div>
+					<div class="flex-item">
+						<div class="headin required">
+							Country or region of birth &nbsp;
+						</div>
+						<div class="defin">
+							<select name="birthcountry" class="form-select">
+								<option value="Pakistan">Pakistan</option>
+								<option value="afghanistan">Afghanistan</option>
+								<option value="america">America</option>
+							</select>
+						</div>
+					</div>
+				</div>
 				<!-- Row 4 -->
-				<tr>
-					<td class="required label">	
-						Birth Date
-					</td>
-					<td>
-						<input class="form-control" type="date" name="birthdate" required="required">
-					</td>
-					<td class="required label">	
-						Country or region of birth
-					</td>
-					<td>
-						<select name="birthcountry" class="form-select">
-							<option value="Pakistan">Pakistan</option>
-							<option value="afghanistan">Afghanistan</option>
-							<option value="america">America</option>
-						</select>
-					</td>
-				</tr>
-				<!-- Row 5 -->
-				<tr>
-					<td class="required label">	
-						Place of Birth<br><sub>(City, Province)</sub>
-					</td>
-					<td>
-						<input class="input-text form-control" type="text" name="birthplace" required="required">
-					</td>
-					<td class="required label">	
-						Native Language
-					</td>
-					<td>
-						<select name="language" class="form-select">
+				
+				<div class="flex-container">
+					<div class="flex-item">
+						<div class="headin required">
+							Place of Birth<br><sub>(City, Province)</sub> &nbsp;
+						</div>
+						<div class="defin">
+							<input class="form-control" type="text" name="birthplace" required="required">
+						</div>
+					</div>
+					<div class="flex-item">
+						<div class="headin required">
+							Native Language
+						</div>
+						<div class="defin">
+							<select name="language" class="form-select">
 							<option value="urdu">Urdu</option>
 							<option value="sindhi">Sindhi</option>
 							<option value="english">English</option>
 						</select>
-					</td>
-				</tr>
-				<!-- Row 6 -->
-				<tr>
-					<td class="required label">	
-						Religion
-					</td>
-					<td>
-						<select name="religion" class="form-select">
-							<option value="islam">Islam</option>
-							<option value="hindu">Hinduism</option>
-							<option value="budha">Budhapist</option>
-						</select>
-					</td>
-					<td class="label">	
-						Blood Group
-					</td>
-					<td>
-						<select name="blood" class="form-select">
-							<option value="o+">O+</option>
-							<option value="o-">O-</option>
-							<option value="a+">A+</option>
-							<option value="a-">A-</option>
-							<option value="b+">B+</option>
-							<option value="b-">B-</option>
-							<option value="ab+">AB+</option>
-							<option value="ab-">AB-</option>
-						</select>
-					</td>
-				</tr>
-			</table>	
-			<table>
-				<tr>
-					<td colspan="4">
-						<!-- National info -->
-						<div class="heading">
-							National Identification
 						</div>
-					</td>
-				</tr>
-				<!-- row 1 -->
-				<!-- row 2 -->
-				<tr>
-					<td class="required label">
-						CNIC #
-					</td>
-					<td>
-						<input class="input-text form-control" type="number" name="cnic" min="1000000000000" max="9999999999999" required >
-					</td>
-					<td class="required label">
-						ISSUE Date
-					</td>
-					<td>
-						<input class="form-control" type="date" name="cnicissuedate" required="required">
-					</td>
-				</tr>
-				<!-- row 3 -->
-				<tr>
-					<td class="required label">
-						ISSUE Place
-					</td>
-					<td colspan="3">
-						<input class="input-text form-control" type="text" name="cnicissueplace" required="required">
-					</td>
-				</tr>
-			</table>
+					</div>
+				</div>
+				
+				<!-- Row 5 -->
+				<div class="flex-container">
+					<div class="flex-item">
+						<div class="headin required">
+							Religion
+						</div>
+						<div class="defin">
+							<select name="religion" class="form-select">
+								<option value="islam">Islam</option>
+								<option value="hindu">Hinduism</option>
+								<option value="budha">Budhapist</option>
+							</select>
+						</div>
+					</div>
+					<div class="flex-item">
+						<div class="headin required">
+							Blood Group
+						</div>
+						<div class="defin">
+							<select name="blood" class="form-select">
+								<option value="o+">O+</option>
+								<option value="o-">O-</option>
+								<option value="a+">A+</option>
+								<option value="a-">A-</option>
+								<option value="b+">B+</option>
+								<option value="b-">B-</option>
+								<option value="ab+">AB+</option>
+								<option value="ab-">AB-</option>
+							</select>
+						</div>
+					</div>
+				</div>
+				<!-- Row 6 -->
+				<div class="heading">
+					<div>National Identification</div>
+				</div>
+			
+				<div class="flex-container">
+					<div class="flex-item">
+						<div class="headin required">
+							CNIC # &nbsp;
+						</div>
+						<div class="defin">
+							<input class="input-text form-control" type="number" name="cnic" min="1000000000000" max="9999999999999" required >
+						</div>
+					</div>
+					<div class="flex-item">
+						<div class="headin required">
+							ISSUE Date &nbsp;
+						</div>
+						<div class="defin">
+							<input class="form-control" type="date" name="cnicissuedate" required="required">
+						</div>
+					</div>
+				</div>
+				
+				<!-- row 7 -->
+			
+				<div class="flex-container">
+					<div class="flex-item">
+						<div class="headin required">
+							ISSUE Place &nbsp;
+						</div>
+						<div class="defin">
+							<input class="form-control" type="text" name="cnicissueplace" required="required">
+						</div>
+					</div>
+					
+					<div class="flex-item">
+						<div class="defin">
+							
+						</div>
+					</div>
+				</div>
 			<input class="btn btn-lg" id="saveSubmit" type="submit" name="saveNext" value="save next">
 		</form>
 		<script>

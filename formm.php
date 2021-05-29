@@ -60,7 +60,7 @@ if($email != false && $password != false){
 		<form class="table" action="" method="post" enctype="multipart/form-data">
 			
 			<div class="heading">
-							Personal Info
+					Personal Info
 			</div>
 			<!-- ================================================================================================================= -->
 		
@@ -80,15 +80,11 @@ if($email != false && $password != false){
 					
 					<div class="flex-item">
 						<div class="headin">
-							<br>
-							<br>
-							<br>
-							<input value="" type="file" name="pics" onchange="loadFile(event);">
+							<input type="file" name="pics" onchange="loadFile(event);">
 						</div>
 					</div>
 				</div>
-			
-	
+
 				<!-- picture upload row  end -->
 				
 				<!-- basic info start -->
@@ -97,7 +93,7 @@ if($email != false && $password != false){
 					<div class="flex-item">
 						
 						<div class="headin required">	
-							Name &nbsp;&nbsp;
+							Name &nbsp;
 						</div>
 						<div class="defin">
 							<input class="form-control" type="text" name="name" required="required">
@@ -105,7 +101,7 @@ if($email != false && $password != false){
 					</div>		
 					<div class="flex-item">
 						<div class="headin required">	
-							Surname &nbsp;&nbsp;
+							Surname &nbsp;
 						</div>
 						<div class="defin">
 							<input class="form-control" type="text" name="surname" required="required">
@@ -117,7 +113,7 @@ if($email != false && $password != false){
 				<div class="flex-container">
 					<div class="flex-item">
 						<div class="required headin">	
-							Father's Name &nbsp;&nbsp;
+							Father's Name &nbsp;
 						</div>
 						<div class="defin">
 							<input class="input-text form-control" type="text" name="fathername" required="required" >
@@ -165,7 +161,7 @@ if($email != false && $password != false){
 				<div class="flex-container">
 					<div class="flex-item">
 						<div class="headin required">
-							Birth Date
+							Birth Date &nbsp;
 						</div>
 						<div class="defin">
 							<input class="form-control" type="date" name="birthdate" required="required">
@@ -173,7 +169,7 @@ if($email != false && $password != false){
 					</div>
 					<div class="flex-item">
 						<div class="headin required">
-							Country or region of birth
+							Country or region of birth &nbsp;
 						</div>
 						<div class="defin">
 							<select name="birthcountry" class="form-select">
@@ -189,10 +185,10 @@ if($email != false && $password != false){
 				<div class="flex-container">
 					<div class="flex-item">
 						<div class="headin required">
-							Place of Birth<br><sub>(City, Province)</sub>
+							Place of Birth<br><sub>(City, Province)</sub> &nbsp;
 						</div>
 						<div class="defin">
-							<input class="input-text form-control" type="text" name="birthplace" required="required">
+							<input class="form-control" type="text" name="birthplace" required="required">
 						</div>
 					</div>
 					<div class="flex-item">
@@ -249,7 +245,7 @@ if($email != false && $password != false){
 				<div class="flex-container">
 					<div class="flex-item">
 						<div class="headin required">
-							CNIC #
+							CNIC # &nbsp;
 						</div>
 						<div class="defin">
 							<input class="input-text form-control" type="number" name="cnic" min="1000000000000" max="9999999999999" required >
@@ -257,7 +253,7 @@ if($email != false && $password != false){
 					</div>
 					<div class="flex-item">
 						<div class="headin required">
-							ISSUE Date
+							ISSUE Date &nbsp;
 						</div>
 						<div class="defin">
 							<input class="form-control" type="date" name="cnicissuedate" required="required">
@@ -270,7 +266,7 @@ if($email != false && $password != false){
 				<div class="flex-container">
 					<div class="flex-item">
 						<div class="headin required">
-							ISSUE Place
+							ISSUE Place &nbsp;
 						</div>
 						<div class="defin">
 							<input class="form-control" type="text" name="cnicissueplace" required="required">
@@ -283,15 +279,6 @@ if($email != false && $password != false){
 						</div>
 					</div>
 				</div>
-				<tr>
-					<td class="required label">
-						
-					</td>
-					<td colspan="3">
-						
-					</td>
-				</tr>
-			</table>
 			<input class="btn btn-lg" id="saveSubmit" type="submit" name="saveNext" value="save next">
 		</form>
 		<script>
