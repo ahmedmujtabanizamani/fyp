@@ -56,7 +56,7 @@ if($email != false && $password != false){
 	
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-		<link rel="stylesheet" href="form.css">	
+		<link rel="stylesheet" href="flex.css">	
 		<title>Form 3</title>
 	</head>
 	
@@ -64,89 +64,97 @@ if($email != false && $password != false){
 		<?php include "navbar1.php"; ?>
 		<!-- form start -->
 		<form action="" method="post" enctype="multipart/form-data">
-			
-		
-			<table>
-				<!-- Row 1 -->
-				<tr>
-					<td colspan="4">
-						<div class="heading">
-							Contact info
-						</div>
-					</td>
-				</tr>
-				<tr>		
-					<td class="required label">	
+			<div class="heading">
+				<div>Contact info</div>
+			</div>
+			<!-- row 1 ----------------------------------->
+			<div class="flex-container">
+				<div class="flex-item">
+					<div class="headin required">
 						Street Address
-					</td>
-					<td>
-						<input class="input-text" type="text" name="street" required="required">
-					</td>
-					<td class="required label">	
+					</div>
+					<div class="defin">	
+						<input class="form-control" type="text" name="street" required >					
+					</div>
+				</div>
+				<div class="flex-item">
+					<div class="headin required">
 						City/Province
-					</td>
-					<td>
-						<input class="input-text" type="text" name="city_province" required="required">
-					</td>
-				</tr>
-				<!-- Row 2 -->
-				<tr>
-					<td class="required label">	
+					</div>			
+					<div class="defin">	
+						<input class="form-control" type="text" name="city_province" required >
+					</div>
+				</div>
+			</div>
+			<!-- Row 1  end ------------------------------------->
+
+			<!-- Row 2 ----------------------------------------------------------->
+			<div class="flex-container">
+				<div class="flex-item">
+					<div class="headin required">
 						Country
-					</td>
-					<td>
-						<input class="input-text" type="text" name="country" required="required" >
-					</td>
-					<td class="required label">	
+					</div>
+					<div class="defin">	
+						<input class="form-control" type="text" name="country" required >				
+					</div>
+				</div>
+				<div class="flex-item">
+					<div class="headin required">
 						Zip code
-					</td>
-					<td>
-						<input type="number" name="zipCode" required >
-					</td>
-				</tr>
-				<!-- Row 3 -->
-				<tr>
-					<td class="required label">	
+					</div>			
+					<div class="defin">	
+						<input class="form-control" type="number" name="zipCode" required >
+					</div>
+				</div>
+			</div>
+			<!-- Row 2  end ------------------------------------->
+			
+			<!-- Row 3 ----------------------------------------------------------->
+			<div class="flex-container">
+				<div class="flex-item">
+					<div class="headin required">
 						Phone #
-					</td>
-					<td>
-						<input type="number" name="phone" required >
-					</td>
-					<td class="label">	
+					</div>
+					<div class="defin">	
+						<input class="form-control" type="number" name="phone" required >			
+					</div>
+				</div>
+				<div class="flex-item">
+					<div class="headin">
 						Email
-					</td>
-					<td>
-						<input type="email" class="input-text" name="cEmail" >
-					</td>
-				</tr>
-			</table>
-			<table>
-				<!-- Row 1 -->
-				<tr>
-					<td colspan="2">
-						<div class="heading">
-							Social Links
-						</div>
-					</td>
-				</tr>
-				<tr>		
-					<td >	
+					</div>			
+					<div class="defin">	
+						<input class="form-control" type="email" class="input-text" name="cEmail" >
+					</div>
+				</div>
+			</div>
+			<!-- Row 3  end ------------------------------------->
+			
+			<div class="heading">
+				<div>Social Links</div>
+			</div>
+			
+			<!-- Row 4 ----------------------------------------------------------->
+			<div class="flex-container">
+				<div class="flex-item">
+					<div class="headin">
 						Facebook
-					</td>
-					<td>
-						<input class="input-text" type="text" name="facebook" >
-					</td>
-				</tr>	
-				<tr>
-					<td>	
+					</div>
+					<div class="defin">	
+						<input class="form-control" type="text" name="facebook" >
+					</div>
+				</div>
+				<div class="flex-item">
+					<div class="headin">
 						Whatsapp #
-					</td>
-					<td>
-						<input class="input-text" type="number" name="whatsapp">
-					</td>
-				</tr>
-			</table>
-				
+					</div>			
+					<div class="defin">	
+						<input class="form-control" type="number" name="whatsapp">
+					</div>
+				</div>
+			</div>
+			<!-- Row 4  end ------------------------------------->
+			
 			<input id="saveSubmit" type="submit" name="submit"value="SaveNext">
 		</form>
 		

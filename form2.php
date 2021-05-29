@@ -97,12 +97,10 @@ if($email != false && $password != false){
 						<input type="checkbox" name="program[]" value="BSEE" onclick="checkBoxLimit()" > BS <sub>( Electronics Engineer )</sub>		
 					</div>
 				</div>
-					
 				<div class="flex-item">
 					<div class="headin">
 						<div style="width:120px;" >&nbsp;</div>
 					</div>
-							
 					<div class="defin">		
 						<input type="checkbox" name="program[]" value="BECE" onclick="checkBoxLimit()" > BE <sub>( Civil )</sub>
 						<br>
@@ -127,19 +125,16 @@ if($email != false && $password != false){
 						<input class="form-control" type="text" name="name" required="required">
 					</div>
 				</div>
-					
 				<div class="flex-item">
 					<div class="headin required">
 						Date
 					</div>
-							
 					<div class="defin">		
 						<input class="form-control" type="date" name="lastEduDate" required="required">
 					</div>
 				</div>
 			</div>
 			<!-- Row 2 ended -->
-			
 			
 			<!-- Row 3 ----------------------------------------------- -->
 			<div class="flex-container">
@@ -162,93 +157,106 @@ if($email != false && $password != false){
 					</div>
 				</div>
 			</div>
-				
-			<table>
-				<tr>
-					<td colspan="4">
-						<!-- National info -->
-						<div class="heading">
-							Secondary Education
-						</div>
-					</td>
-				</tr>
-				<!-- row 1 -->
-				<!-- row 2 -->
-				<tr>
-					<td class="required label">
+			
+<!--
+			row 3 ended
+-->
+			<!-- Row 4 ----------------------------------------------- -->
+			<div class="heading">
+				<div>Secondary Education</div>
+			</div>
+			
+			<div class="flex-container">
+				<div class="flex-item">
+					<div class="headin required">
 						Year of Completion
-					</td>
-					<td>
-						<input type="date" name="matricDate" required >
-					</td>
-					<td class="required label">
+					</div>
+					<div class="defin">
+						<input class="form-control" type="date" name="matricDate" required >
+					</div>
+				</div>
+				<div class="flex-item">
+					<div class="headin required">
 						Name Of Board
-					</td>
-					<td>
-						<input class="input-text" type="text" name="matricBoard" required >
-					</td>
-				</tr>
-				<!-- row 3 -->
-				<tr>
-					<td class="required label">
+					</div>			
+					<div class="defin">	
+						<input class="form-control" type="text" name="matricBoard" required >							
+					</div>
+				</div>
+			</div>
+			<!-- row 4 ended ------------------>
+			
+			<!-- row 5 ------------------>
+			
+			<div class="flex-container">
+				<div class="flex-item">
+					<div class="headin required">
 						Total Marks
-					</td>
-					<td>
-						<input type="number" name="matricTotalMarks" required >
-					</td>
-					<td class="required label">
+					</div>
+					<div class="defin">						
+						<input  class="form-control" type="number" name="matricTotalMarks" required >
+					</div>
+				</div>
+				<div class="flex-item">
+					<div class="headin required">
 						Obtained Marks
-					</td>
-					<td>
-						<input type="number" name="matricObtainedMarks" required >
-					</td>
-				</tr>
-				<!-- Inter marks -->
-				<tr>
-					<td colspan="4">
-						<!-- National info -->
-						<div class="heading">
-							Higher Secondary Education
-						</div>
-					</td>
-				</tr>
-				<!-- row 1 -->
-				<!-- row 2 -->
-				<tr>
-					<td class="required label">
+					</div>			
+					<div class="defin">	
+						<input class="form-control" type="number" name="matricObtainedMarks" required >					
+					</div>
+				</div>
+			</div>
+			<!-- row 5 ended ------------------>
+			
+			<!-- row 6 -------- ------------------>
+			
+			<div class="heading">
+				<div>Higher Secondary Education</div>
+			</div>
+			<div class="flex-container">
+				<div class="flex-item">
+					<div class="headin required">
 						Year of Completion
-					</td>
-					<td>
-						<input type="date" name="interDate" required >
-					</td>
-					<td class="required label">
+					</div>
+					<div class="defin">						
+						<input class="form-control" type="date" name="interDate" required >
+					</div>
+				</div>
+				<div class="flex-item">
+					<div class="headin required">
 						Name Of Board
-					</td>
-					<td>
-						<input class="input-text" type="text" name="interBoard" required >
-					</td>
-				</tr>
-				<!-- row 3 -->
-				<tr>
-					<td class="required label">
+					</div>			
+					<div class="defin">	
+						<input class="form-control" type="text" name="interBoard" required >				
+					</div>
+				</div>
+			</div>
+			<!-- row 6 ended ------------------>
+			
+			<!-- row 7 ------------------>
+			<div class="flex-container">
+				<div class="flex-item">
+					<div class="headin required">
 						Total Marks
-					</td>
-					<td>
-						<input type="number" name="interTotalMarks" required >
-					</td>
-					<td class="required label">
+					</div>
+					<div class="defin">						
+						<input  class="form-control" type="number" name="interTotalMarks" required >
+					</div>
+				</div>
+				<div class="flex-item">
+					<div class="headin required">
 						Obtained Marks
-					</td>
-					<td>
-						<input type="number" name="interObtainedMarks" required >
-					</td>
-				</tr>
-			</table>
+					</div>			
+					<div class="defin">	
+						<input class="form-control" type="number" name="interObtainedMarks" required >					
+					</div>
+				</div>
+			</div>
+			<!-- row 7 ended ------------------>
 			
 			<input id="saveSubmit" type="submit" name="saveNext2" value="save next">
-			
 		</form>
-	<script>
+		<script>
 			var abody = document.getElementById("mybody");
 			window.onload = function() 
 			{ 
