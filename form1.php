@@ -3,6 +3,8 @@
 <?php include "user.php"; ?>
 <?php require_once "controllerUserData.php"; ?>
 <?php 
+
+//session management code =============>
 $email = $_SESSION['email'];
 $password = $_SESSION['password'];
 if($email != false && $password != false){
@@ -72,16 +74,20 @@ if($email != false && $password != false){
 							<br><br>
 							passport size photo (*.jpg, *.jpeg) :
 						</div>
-						<div class="defin">
-							<img id="output" height="100px" src="images/gm.png">
+						<div class="defin cm">
+							<img id="output" class="" height="100px" src="images/gm.png">
 						</div>
 					</div>
 					
 					<div class="flex-item">
 						<div class="headin">
-							<input type="file" name="pics" onchange="loadFile(event);">
+							<label class="btn-upload btn btn-primary">
+								<input type="file" name="pics" onchange="loadFile(event);">
+								<span>Upload</span>
+							</label>
 						</div>
 						<div class="defin">
+							
 						</div>
 					</div>
 				</div>
