@@ -1,6 +1,4 @@
 <!DOCTYPE html>
-
-<?php include "user.php"; ?>
 <?php require_once "controllerUserData.php"; ?>
 <?php 
 
