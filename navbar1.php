@@ -2,7 +2,6 @@
 <html>
 <head>
 
-  <title>Bootstrap Example</title>
   <meta charset="utf-8">
   <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -14,7 +13,7 @@
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-  <a class="navbar-brand" href="dashboard.php">Isra University Admission Portal</a>
+  <a class="navbar-brand" href="dashboard.php">Isra University</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -53,7 +52,7 @@
 		<?php 
 		if(isset($_SESSION['email']) && isset($_SESSION['password']) )
 		{
-			echo '<a class="btn btn-outline-danger text-white" href="logout-user.php">logout</a>';
+			echo '<span class="text-white mr-2">'.$sname.'</span>'.'<a class="btn btn-outline-danger text-white" href="logout-user.php">logout</a>';
 		}
 		else
 		{

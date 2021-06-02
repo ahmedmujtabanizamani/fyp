@@ -126,7 +126,7 @@ if($email != false && $password != false){
 					</td>
 				</tr>
 			</table>	
-			<input id="saveSubmit" type="submit" name="submit" value="submit">
+			<input id="saveSubmit" class="btn-lg btn-primary" type="submit" name="submit" value="submit">
 		</form>
 		
 		<script>

@@ -155,7 +155,7 @@ if($email != false && $password != false){
 			</div>
 			<!-- Row 4  end ------------------------------------->
 			
-			<input id="saveSubmit" type="submit" name="submit"value="SaveNext">
+			<input id="saveSubmit" class="btn-lg btn-primary" type="submit" name="submit"value="SaveNext">
 		</form>
 		
 		<script>

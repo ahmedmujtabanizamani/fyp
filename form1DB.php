@@ -1,8 +1,17 @@
 <?php 
 include "config.php";
+
+//echo "<script>alert('qurey 2');</script>";
 if(isset($_POST["saveNext"]))
 {
-	
+	if(isset($_POST['pphoto']) && strlen($_FILES['pics']['name']) == 0 ) {
+				$fileName=$_POST['pphoto'];
+				//echo "<script>alert('".$fileName."');</script>";
+	}
+	if(mysqli_query($con, "delete from basic_info where email='".$email."';") ){
+		//echo "<script>alert('deleted');</script>";
+	}
+	echo "in form1 db";
 	//validating data ==========================================
 	//personal info
 	if(isset($_POST["language"]))
@@ -66,7 +75,8 @@ if(isset($_POST["saveNext"]))
 	{
 		$cnic_issue_place = $_POST["cnicissueplace"];
 	}
-	if (isset($_FILES['pics'])) { 
+	if (isset($_FILES['pics']) && strlen( $_FILES['pics']['name'] ) >0 ) { 
+		
 		$file = $_FILES['pics'];
 		$fileName = $file['name'];
 		$fileSize = $file['size'];
@@ -78,7 +88,6 @@ if(isset($_POST["saveNext"]))
 		//echo '('.$imageDir.'/'.$fileName.')';
 		move_uploaded_file($fileTmp,$imageDir."/".$fileName);
 	}
-
 // creating query ==========================================================================
 		$infoQuery .= "insert into basic_info ( ";
 		$infoQuery .= "email,";

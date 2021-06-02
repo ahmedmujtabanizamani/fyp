@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<?php include "user.php" ?>
 <?php require_once "controllerUserData.php"; ?>
 <?php 
 $email = $_SESSION['email'];
@@ -48,27 +47,7 @@ if($email != false && $password != false){
 		<title>Form 2</title>
 
 	</head>
-	<script>
-		function checkBoxLimit() {
-			var checkBoxGroup = document.forms['form2']['program[]'];			
-			var limit = 3;
-			for (var i = 0; i < checkBoxGroup.length; i++) 
-			{
-				checkBoxGroup[i].onclick = function() {
-					var checkedcount = 0;
-					for (var i = 0; i < checkBoxGroup.length; i++) {
-						checkedcount += (checkBoxGroup[i].checked) ? 1 : 0;
-					}
-					if (checkedcount > limit) {
-						console.log("You can select maximum of " + limit + " programs.");
-						alert("You can select maximum of " + limit + " programs.");						
-						this.checked = false;
-					}
-				}
-			}
-		}
-	
-	</script>
+	<script src="js/program_select.js"></script>
 	
 	<body id="mybody" style="display:none;">
 		<!-- form start -->
@@ -254,7 +233,7 @@ if($email != false && $password != false){
 			</div>
 			<!-- row 7 ended ------------------>
 			
-			<input id="saveSubmit" type="submit" name="saveNext2" value="save next">
+			<input id="saveSubmit" class="btn btn-primary btn-lg" type="submit" name="saveNext2" value="save next">
 		</form>
 		<script>
 			var abody = document.getElementById("mybody");

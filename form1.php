@@ -286,7 +286,7 @@ if($email != false && $password != false){
 						</div>
 					</div>
 				</div>
-			<input class="btn btn-lg" id="saveSubmit" type="submit" name="saveNext" value="save next">
+			<input class="btn-general btn btn-lg" id="saveSubmit" type="submit" name="saveNext" value="save next">
 		</form>
 		<script>
 			var abody = document.getElementById("mybody");

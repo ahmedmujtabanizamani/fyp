@@ -1,4 +1,9 @@
-<form class="table" action="" method="post" enctype="multipart/form-data">
+<!DOCTYPE html>
+<html>
+	
+	
+	<body>
+		<form class="table" name="form1" action="" method="post" enctype="multipart/form-data">
 			<div class="heading">
 				<div>
 					Personal Info
@@ -17,13 +22,19 @@
 							passport size photo (*.jpg, *.jpeg) :
 						</div>
 						<div class="defin cm">
-							<img id="output" class="" height="100px" src="<?php echo 'images/'.$basic_info[$basic_info_count++].'/'.$basic_info[$basic_info_count++]; ?>">
+							<?php 
+								$email = $basic_info[$basic_info_count++];
+								$fileName = $basic_info[$basic_info_count++];
+								$img =  'images/'.$email.'/'.$fileName; 
+							?>
+							<img id="output" class="" height="100px" src="<?php echo $img; ?>">
 						</div>
 					</div>
 					
 					<div class="flex-item">
 						<div class="headin">
 							<label class="btn-upload btn btn-primary">
+								<input type="hidden" name="pphoto" value="<?php echo $fileName; ?>" >
 								<input type="file" name="pics" onchange="loadFile(event);">
 								<span>Upload</span>
 							</label>
@@ -45,7 +56,8 @@
 							Name
 						</div>
 						<div class="defin">
-							<input class="form-control" type="text" name="name" value="<?php echo $basic_info[$basic_info_count++]; ?>" required="required">
+							
+							<input id="demo" class="form-control" type="text" name="name" value="<?php echo $basic_info[$basic_info_count++]; ?>" required="required">
 						</div>
 					</div>		
 					<div class="flex-item">
@@ -296,5 +308,7 @@
 						</div>
 					</div>
 				</div>
-			<input class="btn btn-lg" id="saveSubmit" type="submit" name="saveNext" value="save next">
+			<input class="btn btn-primary btn-lg" id="saveSubmit" type="submit" name="saveNext" value="update">
 		</form>
+	</body>
+</html>

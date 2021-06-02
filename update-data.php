@@ -58,7 +58,7 @@ if($email != false && $password != false){
 		$run_Sql = mysqli_query($con, $sql);
 		$result = mysqli_fetch_array($run_Sql);
 		if( $result > 0 ){
-			$edu_info_count=0;
+			$edu_info_count=1;
 			$edu_info = $result;
 			//header('Location: form2.php');
 			//exit();
@@ -70,7 +70,7 @@ if($email != false && $password != false){
     header('Location: login-user.php');
 }
 ?>
-<?php include 'form1DB.php'; ?>
+
 <html>
 	<head>
 			<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
@@ -95,7 +95,10 @@ if($email != false && $password != false){
 				Personal info
 			</a>
 			<div id="form1" class="collapse">
+				<?php include "form1DB.php"; ?>
+				<?php include "form2DB.php"; ?>
 				<?php include "update/form1-update.php"; ?>
+				
 			</div>
 		
 		<?php } ?>
@@ -107,6 +110,7 @@ if($email != false && $password != false){
 				Educational Info
 			</a>
 			<div id="form2" class="collapse">
+				
 				<?php include "update/form2-update.php"; ?>
 			</div>
 		<?php } ?>
@@ -116,7 +120,6 @@ if($email != false && $password != false){
 			window.onload = function() 
 			{ 
 				setTimeout(function(){ abody.style.display = "block";  }, 500);
-				var accordions = bulmaAccordion.attach();
 			}
 		</script>
 	</body>

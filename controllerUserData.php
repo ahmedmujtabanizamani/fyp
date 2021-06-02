@@ -81,6 +81,7 @@ if(isset($_POST['signup'])){
 
 }
     //if user click verification code submit button
+    
     if(isset($_POST['check'])){
         $_SESSION['info'] = "";
         $otp_code = mysqli_real_escape_string($con, $_POST['otp']);
@@ -97,6 +98,9 @@ if(isset($_POST['signup'])){
             if($update_res){
                 $_SESSION['name'] = $name;
                 $_SESSION['email'] = $email;
+                 if( mysqli_query( $con, "insert into submitted (email, date, status) values ('".$email."',  now(), 'not submitted');") ){
+		
+				}
                 header('location: dashboard.php');
                 exit();
             }else{

@@ -51,7 +51,7 @@ if(isset($_POST["submit"]))
 	if(mysqli_query($con,$infoQuery))
 	{
 		
-		if(mysqli_query($con,"insert into submitted (email, date) values ('".$email."', '".date('Y-m-d')."');"))
+		if(mysqli_query($con,"update submitted set status='submitted' where email='".$email."';"))
 		{
 			header("Refresh:0");
 		}

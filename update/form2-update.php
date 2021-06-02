@@ -1,4 +1,11 @@
-<form name=form2 action="" method="post" enctype="multipart/form-data">
+<!DOCTYPE html>
+<html>
+	
+	<body>
+		<script src="js/program_select.js">
+
+		</script>
+		<form name=form2 action="" method="post" enctype="multipart/form-data">
 		
 			<div class="heading">
 				<div>StudyPlan in Hyderabad Campus</div>						
@@ -66,7 +73,7 @@
 						Last Institute <br>Attended Name
 					</div>
 					<div class="defin">
-						<input class="form-control" type="text" name="name" required="required">
+						<input class="form-control" type="text" name="name" value="<?php echo $edu_info[$edu_info_count++]; ?>" required="required">
 					</div>
 				</div>
 				<div class="flex-item">
@@ -74,7 +81,7 @@
 						Date
 					</div>
 					<div class="defin">		
-						<input class="form-control" type="date" name="lastEduDate" required="required">
+						<input class="form-control" type="date" name="lastEduDate" value="<?php echo $edu_info[$edu_info_count++]; ?>" required="required">
 					</div>
 				</div>
 			</div>
@@ -87,7 +94,7 @@
 						City
 					</div>
 					<div class="defin">
-						<input class="form-control" type="text" name="lastEduCity" required="required" >
+						<input class="form-control" type="text" name="lastEduCity" value="<?php echo $edu_info[$edu_info_count++]; ?>" required="required" >
 
 					</div>
 				</div>
@@ -97,7 +104,7 @@
 						Country
 					</div>			
 					<div class="defin">								
-						<input class="form-control" type="text" name="lastEduCountry" required >
+						<input class="form-control" type="text" name="lastEduCountry" value="<?php echo $edu_info[$edu_info_count++]; ?>" required >
 					</div>
 				</div>
 			</div>
@@ -116,7 +123,7 @@
 						Year of Completion
 					</div>
 					<div class="defin">
-						<input class="form-control" type="date" name="matricDate" required >
+						<input class="form-control" type="date" name="matricDate" value="<?php echo $edu_info[$edu_info_count++]; ?>" required >
 					</div>
 				</div>
 				<div class="flex-item">
@@ -124,7 +131,7 @@
 						Name Of Board
 					</div>			
 					<div class="defin">	
-						<input class="form-control" type="text" name="matricBoard" required >							
+						<input class="form-control" type="text" name="matricBoard" value="<?php echo $edu_info[$edu_info_count++]; ?>" required >							
 					</div>
 				</div>
 			</div>
@@ -138,7 +145,7 @@
 						Total Marks
 					</div>
 					<div class="defin">						
-						<input  class="form-control" type="number" name="matricTotalMarks" required >
+						<input  class="form-control" type="number" name="matricTotalMarks" value="<?php echo $edu_info[$edu_info_count++]; ?>" required >
 					</div>
 				</div>
 				<div class="flex-item">
@@ -146,7 +153,7 @@
 						Obtained Marks
 					</div>			
 					<div class="defin">	
-						<input class="form-control" type="number" name="matricObtainedMarks" required >					
+						<input class="form-control" type="number" name="matricObtainedMarks" value="<?php echo $edu_info[$edu_info_count++]; ?>" required >					
 					</div>
 				</div>
 			</div>
@@ -163,7 +170,7 @@
 						Year of Completion
 					</div>
 					<div class="defin">						
-						<input class="form-control" type="date" name="interDate" required >
+						<input class="form-control" type="date" name="interDate" value="<?php echo $edu_info[$edu_info_count++]; ?>" required >
 					</div>
 				</div>
 				<div class="flex-item">
@@ -171,7 +178,7 @@
 						Name Of Board
 					</div>			
 					<div class="defin">	
-						<input class="form-control" type="text" name="interBoard" required >				
+						<input class="form-control" type="text" name="interBoard" value="<?php echo $edu_info[$edu_info_count++]; ?>" required >				
 					</div>
 				</div>
 			</div>
@@ -184,7 +191,7 @@
 						Total Marks
 					</div>
 					<div class="defin">						
-						<input  class="form-control" type="number" name="interTotalMarks" required >
+						<input  class="form-control" type="number" name="interTotalMarks" value="<?php echo $edu_info[$edu_info_count++]; ?>" required >
 					</div>
 				</div>
 				<div class="flex-item">
@@ -192,11 +199,16 @@
 						Obtained Marks
 					</div>			
 					<div class="defin">	
-						<input class="form-control" type="number" name="interObtainedMarks" required >					
+						<input class="form-control" type="number" name="interObtainedMarks" value="<?php echo $edu_info[$edu_info_count++]; ?>" required >					
 					</div>
 				</div>
 			</div>
 			<!-- row 7 ended ------------------>
 			
-			<input id="saveSubmit" type="submit" name="saveNext2" value="save next">
+			<input id="saveSubmit" class="btn btn-primary btn-lg" type="submit" name="saveNext2" value="update">
 		</form>
+		
+
+	</body>
+</html>
+		

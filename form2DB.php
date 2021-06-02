@@ -4,7 +4,12 @@ if(isset($_POST["saveNext2"]))
 {
 	
 	//validating data ==========================================
-	
+	if(mysqli_query($con, "delete from programs where email='".$email."';") ){
+		if(mysqli_query($con, "delete from edu_info where email='".$email."';") ){
+			//echo "<script>alert('deleted');</script>";
+		}
+		//echo "<script>alert('deleted');</script>";
+	}
 	//prev edu info
 	
 	if(isset($_POST["name"]))
