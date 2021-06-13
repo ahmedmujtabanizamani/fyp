@@ -179,4 +179,20 @@ justify-content: flex-end;
 
 
 
+.data-head{
+	padding:10px;
+	display:flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+[type=checkbox].checkboxHidden{
+			position:absolute;
+			top:-1000px;
+		}
+.body{ 
+max-width: 1024px; 
+margin: 0 auto;
+}
+
+
   

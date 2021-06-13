@@ -2,20 +2,16 @@
 <html>
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+		<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+		<link rel="stylesheet" href="flex.css" />
 	</head>
-	
-	<style>
-		[type=checkbox].checkboxHidden{
-			position:absolute;
-			top:-1000px;
-		}
-		body{
-			max-width:800px;
-			margin:0 auto;
-		}
-	</style>
-<body>
-
+<body class="body">
+<div class="heading">
+	<div>
+		Applied Users
+	</div>
+</div>
 <?php require_once "controllerUserData.php"; ?>
 <?php
 
@@ -62,10 +58,23 @@ echo '<input type="hidden" name="checkCount" value="0" />';
 while($row = mysqli_fetch_assoc($result1)){
 	echo '<input class="checkboxHidden" type="checkbox" name="users[]" value="'.$row['email'].'" />';
 }
+echo '<div class="data-head cardd" >';
+
 echo '<input type="checkbox" name="select-all" onchange="selectAll()" >';
-echo '<input type="submit" name="rejectAll" value="X" />';
-echo '<input type="submit" name="acceptAll" value="V" />';
-echo '<input type="submit" name="revertAll" value="<--" />';
+echo '<div><label>
+					<i class="btn btn-lg btn-danger fa fa-times" aria-hidden="true"></i>
+					<input style="display:inline;display:none;" type="submit" name="rejectAll" value="">
+				</label>';
+echo '	<label>
+				<i class="btn btn-lg btn-success fa fa-check" aria-hidden="true"></i>
+				<input style="display:inline;display:none;" type="submit" name="acceptAll" value="">
+			</label>';
+echo '	<label>
+				<i class="btn btn-lg btn-warning fa fa-hand-paper-o" aria-hidden="true"></i>
+				<input style="display:inline;display:none;" type="submit" name="revertAll" value="">
+			</label></div>';
+			echo '</div>';
+
 echo '</form>';
 // hidden portion ========================================
 
@@ -73,7 +82,7 @@ echo '</form>';
 
 while($row = mysqli_fetch_assoc($result)){
 	
-	echo '<div style="display:flex; align-items:center;justify-content:space-around; border: solid red 2px;flex-wrap: wrap; ">';
+	echo '<div class="cardd">';
 	
 	//checkbox
 	echo "<form method='post' action='' name='data-show'>";
@@ -88,21 +97,30 @@ while($row = mysqli_fetch_assoc($result)){
 	//btns
 	echo '<form method="post" style="display:inline">
 					<input name="id" type="hidden" value="'.$row["email"].'">
-					<input style="display:inline;" type="submit" name="action1" value="V">
+					<label>
+						<i class="btn btn-lg btn-success fa fa-check" aria-hidden="true"></i>
+					<input style="display:inline;display:none;" type="submit" name="action1" value="">
+					</label>
 				</form>';
 				
 	echo '<form method="post" style="display:inline">
 		<input name="id" type="hidden" value="'.$row["email"].'">
-		<input style="display:inline;" type="submit" name="action3" value="X">
+		<label>
+			<i class="btn btn-lg btn-danger fa fa-times" aria-hidden="true"></i>
+			<input style="display:inline;display:none;" type="submit" name="action3" value="">
+		</label>
 	</form>';
 	
 	echo '<form method="post" style="display:inline">
 				<input name="id" type="hidden" value="'.$row["email"].'">
-				<input style="display:inline;" type="submit" name="action2" value="<--">
+				<label>
+					<i class="btn btn-lg btn-warning fa fa-hand-paper-o" aria-hidden="true"></i>
+					<input style="display:inline;display:none;" type="submit" name="action2" value="">
+				</label>
 			</form>';
 	echo '</div>';
-	
 }
+
 
 ?>
 <script>
