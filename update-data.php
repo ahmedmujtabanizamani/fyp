@@ -65,6 +65,21 @@ if($email != false && $password != false){
 		}else{
 			$is_form2 = false;
 		}
+        //========================= 
+        
+        //=======================  check if form 3 filled
+        $sql = "SELECT * FROM contact_info WHERE email = '$email'";
+		$run_Sql = mysqli_query($con, $sql);
+		$result = mysqli_fetch_array($run_Sql);
+		if( $result > 0 ){
+			$contact_info_count=1;
+			$contact_info = $result;
+			$is_form3 = true;
+			//header('Location: form2.php');
+			//exit();
+		}else{
+			$is_form3 = false;
+		}
         //=========================   
 }else{
     header('Location: login-user.php');
@@ -88,30 +103,39 @@ if($email != false && $password != false){
 	<?php include "navbar1.php"; ?>
 
 	<body style="display:none;" id="mybody">
-		<!-- form start -->
-		
+		<?php include "form1DB.php"; ?>
+		<?php include "form2DB.php"; ?>
+		<?php include "form3DB.php"; ?>
+		<!-- check form1 filled -->		
 		<?php if($is_form1){ ?>
 			<a class="btn btn-primary btn-lg mt-2 ml-3" data-toggle="collapse" href="#form1" role="button" aria-expanded="false" aria-controls="form1">
 				Personal info
 			</a>
 			<div id="form1" class="collapse">
-				<?php include "form1DB.php"; ?>
-				<?php include "form2DB.php"; ?>
 				<?php include "update/form1-update.php"; ?>
-				
 			</div>
 		
 		<?php } ?>
 		
 		
-		
+		<!-- check form2 filled -->		
 		<?php if($is_form2){ ?>
 			<a class="btn btn-success btn-lg mt-2" data-toggle="collapse" href="#form2" role="button" aria-expanded="false" aria-controls="form2">
 				Educational Info
 			</a>
 			<div id="form2" class="collapse">
-				
 				<?php include "update/form2-update.php"; ?>
+			</div>
+		<?php } ?>
+		
+		<!-- check form3 filled -->		
+		<?php if($is_form3){ ?>
+			<a class="btn btn-info btn-lg mt-2" data-toggle="collapse" href="#form3" role="button" aria-expanded="false" aria-controls="form3">
+				Contact Info
+			</a>
+			<div id="form3" class="collapse">
+				
+				<?php include "update/form3-update.php"; ?>
 			</div>
 		<?php } ?>
 		

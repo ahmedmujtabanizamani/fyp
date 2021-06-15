@@ -1,6 +1,9 @@
 <?php 
 if(isset($_POST["submit"]))
 {
+	if(mysqli_query($con, "delete from contact_info where email='".$email."';") ){
+		//echo "<script>alert('deleted');</script>";
+	}
 	//contact info verification
 	if(isset($_POST["street"]))
 	{
