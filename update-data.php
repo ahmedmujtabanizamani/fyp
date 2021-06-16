@@ -92,7 +92,7 @@ if($email != false && $password != false){
 		    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
 
 		<link rel="stylesheet" href="flex.css">	
-		<title>Form 1</title>
+		<title>Update Form</title>
 	<script>
 		var loadFile = function(event) {
 		var image = document.getElementById('output');
