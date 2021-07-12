@@ -9,6 +9,10 @@ session_start();
 require "connection.php";
 $email = "";
 $name = "";
+
+$fromEmail = "oapfyp@gmail.com";
+$passEmail = "Fyp.54321";
+
 $errors = array();
 
 //if user signup button
@@ -35,7 +39,7 @@ if(isset($_POST['signup'])){
         if($data_check){
             $subject = "Email Verification Code";
             $message = "Your verification code is $code";
-            $sender = "From: gnizamani095@gmail.com";
+            $sender = "From: ".$fromEmail;
             
             //========================================================
          
@@ -50,9 +54,9 @@ if(isset($_POST['signup'])){
 				$mail->Port       = 587;
 				$mail->SMTPDebug  = 1;
 				$mail->SMTPAuth   = true;
-				$mail->Username   = 'gnizamani095@gmail.com';
-				$mail->Password   = 'Mybro.54321';
-				$mail->SetFrom('gnizamani095@gmail.com', $name);
+				$mail->Username   = $fromEmail;
+				$mail->Password   = $passEmail;
+				$mail->SetFrom($fromEmail, $name);
 				$mail->AddReplyTo('no-reply@mycomp.com','no-reply');
 				$mail->Subject    = 'php generated code ['.$code.']';
 				$mail->MsgHTML($body);
@@ -154,7 +158,7 @@ if(isset($_POST['signup'])){
             if($run_query){
                 $subject = "Password Reset Code";
                 $message = "Your password reset code is $code";
-                $sender = "From: gnizamani095@gmail.com";
+                $sender = "From: ".$fromEmail;
                 
                 //=========================================================
                 
@@ -169,9 +173,9 @@ if(isset($_POST['signup'])){
 				$mail->Port       = 587;
 				$mail->SMTPDebug  = 1;
 				$mail->SMTPAuth   = true;
-				$mail->Username   = 'gnizamani095@gmail.com';
-				$mail->Password   = 'Mybro.54321';
-				$mail->SetFrom('gnizamani095@gmail.com', $name);
+				$mail->Username   = $fromEmail;
+				$mail->Password   = $passEmail;
+				$mail->SetFrom($fromEmail, $name);
 				$mail->AddReplyTo('no-reply@mycomp.com','no-reply');
 				$mail->Subject    = 'php generated code ['.$code.']';
 				$mail->MsgHTML($body);
