@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 8.0.24, for Linux (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.25, for Linux (x86_64)
 --
 -- Host: localhost    Database: admissionnew
 -- ------------------------------------------------------
--- Server version	8.0.24
+-- Server version	8.0.25
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -52,6 +52,31 @@ CREATE TABLE `basic_info` (
 LOCK TABLES `basic_info` WRITE;
 /*!40000 ALTER TABLE `basic_info` DISABLE KEYS */;
 /*!40000 ALTER TABLE `basic_info` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `challan`
+--
+
+DROP TABLE IF EXISTS `challan`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `challan` (
+  `id` int NOT NULL,
+  `date` date NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `status` varchar(50) NOT NULL,
+  PRIMARY KEY (`email`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `challan`
+--
+
+LOCK TABLES `challan` WRITE;
+/*!40000 ALTER TABLE `challan` DISABLE KEYS */;
+/*!40000 ALTER TABLE `challan` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -227,4 +252,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-05-25 15:27:22
+-- Dump completed on 2021-07-12 15:38:49
